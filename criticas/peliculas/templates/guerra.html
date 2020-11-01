@@ -43,7 +43,6 @@
 
 			<div class="ubicacion-cuerpo">
 				<h1>Dejanos tu opinion</h1><br>
-
 				<form autocomplete="on" method="post">
 					<div class="row">
 						<label class="col-lg-3 col-md-12 col-sm-12 letra-registro">Descripcion breve</label>
@@ -58,6 +57,7 @@
 					
 				</form><br>
 
+				<a href="{% url 'comentarioguerra' %}"><input class="btn btn-secondary" type="button" name="registrar" value="Detalles Comentarios"></a><br><br><br>
 				
 					{% for com in comentario %}
 						<div class="container " style="background-color:#6c6c6c;padding-bottom: 2%; border-style: solid;border-color: #000; border-width: 2px; border-radius: 10px">

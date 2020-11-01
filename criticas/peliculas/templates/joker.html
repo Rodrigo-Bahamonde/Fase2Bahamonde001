@@ -81,7 +81,6 @@
 
 		<div class="ubicacion-cuerpo">
 		<h1>Dejanos tu opinion</h1><br>
-
 		<form autocomplete="on">
 			<div class="row">
 				<label class="col-lg-3 col-md-12 col-sm-12 letra-registro">Descripcion breve</label>
@@ -92,8 +91,10 @@
 				<textarea class="comentario col-lg-4 col-md-11 col-sm-11 col-11" name="comentario" id="Comentario"></textarea>
 			</div><br>
 			
-			<input class="offset-lg-3 col-lg-2 col-md-3 col-sm-3 col-4 btn btn-secondary" type="button" name="registrar" value="Comentar" onclick="ValidarComentario()"><br><br>
+			<input class="offset-lg-3 col-lg-2 col-md-3 col-sm-3 col-4 btn btn-secondary" type="button" name="registrar" value="Comentar"><br><br>
 		</form><br>
+
+		<a href="{% url 'comentariojoker' %}"><input class="btn btn-secondary" type="button" name="registrar" value="Detalles Comentarios"></a><br><br><br>
 
 		{% for com in comentario %}
 	    	<div class="container" style="background-color:#6c6c6c;padding-bottom: 2%; border-style: solid;border-color: #000; border-width: 2px; border-radius: 10px">

@@ -58,4 +58,93 @@ def joker(request):
         context={'comentario':comentario},
     )
 
+class EndgameCreate(CreateView):
+    model = ComentarioEndgame
+    fields = '__all__'
 
+class EndgameUpdate(UpdateView):
+    model = ComentarioEndgame
+    fields = ['descripcion','comentario']
+
+class EndgameDelete(DeleteView):
+    model = ComentarioEndgame
+    success_url = reverse_lazy('endgame')
+
+
+
+class JokerCreate(CreateView):
+    model = ComentarioJoker
+    fields = '__all__'
+
+class JokerUpdate(UpdateView):
+    model = ComentarioJoker
+    fields = ['descripcion','comentario']
+
+class JokerDelete(DeleteView):
+    model = ComentarioJoker
+    success_url = reverse_lazy('joker')
+
+
+
+class DolittleCreate(CreateView):
+    model = ComentarioDolittle
+    fields = '__all__'
+
+class DolittleUpdate(UpdateView):
+    model = ComentarioDolittle
+    fields = ['descripcion','comentario']
+
+class DolittleDelete(DeleteView):
+    model = ComentarioDolittle
+    success_url = reverse_lazy('endgame')
+
+
+class GuerraCreate(CreateView):
+    model = ComentarioGuerra
+    fields = '__all__'
+
+class GuerraUpdate(UpdateView):
+    model = ComentarioGuerra
+    fields = ['descripcion','comentario']
+
+class GuerraDelete(DeleteView):
+    model = ComentarioGuerra
+    success_url = reverse_lazy('guerra')
+
+
+
+
+
+class GuerraListView(generic.ListView):
+    model = ComentarioGuerra
+    paginate_by = 10
+    queryset = ComentarioGuerra.objects.all()
+
+class GuerraDetailView(generic.DetailView):
+    model = ComentarioGuerra
+
+
+class EndgameListView(generic.ListView):
+    model = ComentarioEndgame
+    paginate_by = 10
+    queryset = ComentarioEndgame.objects.all()
+
+class EndgameDetailView(generic.DetailView):
+    model = ComentarioEndgame
+
+class JokerListView(generic.ListView):
+    model = ComentarioJoker
+    paginate_by = 10
+    queryset = ComentarioJoker.objects.all()
+
+class JokerDetailView(generic.DetailView):
+    model = ComentarioJoker
+
+
+class DolittleListView(generic.ListView):
+    model = ComentarioDolittle
+    paginate_by = 10
+    queryset = ComentarioDolittle.objects.all()
+
+class DolittleDetailView(generic.DetailView):
+    model = ComentarioDolittle

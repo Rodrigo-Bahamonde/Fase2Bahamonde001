@@ -1,0 +1,18 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+	<div class="container cuerpo" style="margin-bottom: -2%;">
+	<br><br>
+	<h1>Comentario</h1>
+	<br>	
+		<ul>
+			<li>
+				<p class="letra-cuerpo" style="margin-left: 2%;!important">Autor: Anónimo</p>
+				<p class="letra-cuerpo" style="margin-left: 2%;!important">Descripcion: {{ comentarioguerra.descripcion }}</a></p>
+				<p class="letra-cuerpo" style="margin-left: 2%;!important">Comentario: {{comentarioguerra.comentario}}</p>
+				<p class="letra-cuerpo" style="margin-left: 2%;!important">Fecha: {{comentarioguerra.fecha}}</p><br><br>
+			</li>
+		</ul>
+	
+	</div>
+{% endblock %}
