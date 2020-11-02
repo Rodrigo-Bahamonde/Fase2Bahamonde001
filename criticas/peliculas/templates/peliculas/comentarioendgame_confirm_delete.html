@@ -1,0 +1,13 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <div class="container cuerpo"><br>
+    <h1>Eliminando comentario</h1><br>
+    <p class="letra-cuerpo">Estas seguro que quieres eliminar el comentario?</p>
+    
+    <form method="post">
+        {% csrf_token %}
+        <input class="offset-lg-2 btn btn-dark" type="submit" value="Delete">
+    </form><br><br>
+    </div>
+{% endblock %}

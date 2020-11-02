@@ -90,33 +90,13 @@ function Validar() {
 	else
 	{
 		alert('Se ha registrado exitosamente');
-		window.location.href="inicio.html";
+		document.getElementById('Nombre').value="";
+		document.getElementById('Apellido').value="";
+		document.getElementById('Edad').value="";
+		document.getElementById('Contraseña1').value="";
+		document.getElementById('Contraseña2').value="";
 	}
 }
 
 
 
-function ValidarComentario() {
-		var descripcion = document.getElementById('Descripcion').value;
-		var comentario = document.getElementById('Comentario').value;
-		var ingresar = document.getElementById('CajaComentario');
-		if(descripcion.length == 0 || comentario.length == 0)
-		{
-			alert('Debe llenar los campos para validar su comentario');
-		}
-		else
-		{
-			ingresar.innerHTML += `
-			<div class="container" style="background-color:#6c6c6c;">
-			<br>
-			<h1>Anonimo<h1>
-			<h4 class="letra-cuerpo" style="font-size: 35px;">${descripcion}</h4>
-			<p class="letra-cuerpo" style="font-size: 20px;">${comentario}</p><br>
-			</div><br><br>`;
-			document.getElementById('Descripcion').value="";
-			document.getElementById('Comentario').value="";
-			document.getElementById('Descripcion').focus();
-			
-		}
-		
-	}

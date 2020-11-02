@@ -21,4 +21,16 @@ urlpatterns=[
 ]
 
 urlpatterns+=[
+    path('endgame/create',views.EndgameCreate.as_view(), name='endgame_create'),
+    path('endgame/<int:pk>/update',views.EndgameUpdate.as_view(), name='endgame_update'),
+    path('endgame/<int:pk>/delete',views.EndgameDelete.as_view(), name='endgame_delete'),
+    path('dolittle/create',views.DolittleCreate.as_view(), name='dolittle_create'),
+    path('dolittle/<int:pk>/update',views.DolittleUpdate.as_view(), name='dolittle_update'),
+    path('dolittle/<int:pk>/delete',views.DolittleDelete.as_view(), name='dolittle_delete'),
+    path('guerra/create',views.GuerraCreate.as_view(), name='guerra_create'),
+    path('guerra/<int:pk>/update',views.GuerraUpdate.as_view(), name='guerra_update'),
+    path('guerra/<int:pk>/delete',views.GuerraDelete.as_view(), name='guerra_delete'),
+    path('joker/create',views.JokerCreate.as_view(), name='joker_create'),
+    path('joker/<int:pk>/update',views.JokerUpdate.as_view(), name='joker_update'),
+    path('joker/<int:pk>/delete',views.JokerDelete.as_view(), name='joker_delete'),
 ]

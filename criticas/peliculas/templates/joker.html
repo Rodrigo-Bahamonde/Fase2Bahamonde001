@@ -81,33 +81,19 @@
 
 		<div class="ubicacion-cuerpo">
 		<h1>Dejanos tu opinion</h1><br>
-		<form autocomplete="on">
-			<div class="row">
-				<label class="col-lg-3 col-md-12 col-sm-12 letra-registro">Descripcion breve</label>
-				<input class="col-lg-4 col-md-11 col-sm-11 col-11" type="text" name="descripcion" id="Descripcion">
-			</div><br>
-			<div class="row">
-				<label class="col-lg-3 letra-registro">Comenta aqui:</label>
-				<textarea class="comentario col-lg-4 col-md-11 col-sm-11 col-11" name="comentario" id="Comentario"></textarea>
-			</div><br>
-			
-			<input class="offset-lg-3 col-lg-2 col-md-3 col-sm-3 col-4 btn btn-secondary" type="button" name="registrar" value="Comentar"><br><br>
-		</form><br>
-
-		<a href="{% url 'comentariojoker' %}"><input class="btn btn-secondary" type="button" name="registrar" value="Detalles Comentarios"></a><br><br><br>
-
+		<a href="{% url 'joker_create' %}"><input class="col-lg-3 col-md-4 col-sm-4 col-5 btn btn-secondary" type="button" name="registrar" value="Comentar"></a>
+		<a href="{% url 'comentariojoker' %}"><input class="offset-lg-1 col-lg-3 col-md-5 col-sm-5 col-6 btn btn-secondary" type="button" name="registrar" value="Detalles Comentarios"></a><br><br><br>
 		{% for com in comentario %}
 	    	<div class="container" style="background-color:#6c6c6c;padding-bottom: 2%; border-style: solid;border-color: #000; border-width: 2px; border-radius: 10px">
 				<br>
 				<h1>Anonimo<h1>
 				<h4 class="letra-cuerpo" style="font-size: 35px;">{{com.descripcion}}</h4>
 				<p class="letra-cuerpo" style="font-size: 20px;">{{com.comentario}}</p><br>
-				<a href=""><input class="offset-lg-1 col-lg-2 col-md-3 col-sm-3 col-4 btn btn-dark" type="button" name="registrar" value="Eliminar" ></a>
-				<a href=""><input class="offset-lg-1 col-lg-2 col-md-3 col-sm-3 col-4 btn btn-dark" type="button" name="registrar" value="Editar" ><br><br></a>
+				<a href="{% url 'joker_delete' com.id %}"><input class="offset-lg-1 col-lg-2 col-md-3 col-sm-3 col-4 btn btn-dark" type="button" name="registrar" value="Eliminar" ></a>
+				<a href="{% url 'joker_update' com.id %}"><input class="offset-lg-1 col-lg-2 col-md-3 col-sm-3 col-4 btn btn-dark" type="button" name="registrar" value="Editar" ></a><br><br>
 			</div><br><br>
 		{% endfor %}
 
-		<div id="CajaComentario"></div>
 	</div>
 	</div>
 {% endblock %}
